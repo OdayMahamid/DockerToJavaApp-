@@ -1,10 +1,14 @@
 FROM openjdk:8-jdk-alpine
 
-COPY ./target/*.jar .  
+WORKDIR /app
+
+COPY target/spring-petclinic-2.5.0-SNAPSHOT.jar /app/  
+
 
 EXPOSE 8080
 
-CMD java -jar spring-petclinic-2.4.2.jar
+CMD java -jar /app/spring-petclinic-2.5.0-SNAPSHOT.jar
+
 
 
 
